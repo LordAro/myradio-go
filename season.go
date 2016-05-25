@@ -7,7 +7,7 @@ import (
 )
 
 func (s *Session) GetSeason(id int) (season Season, err error) {
-	data, err := s.apiRequest(fmt.Sprintf("/season/%d/", id), []string{})
+	data, err := s.apiRequest(fmt.Sprintf("/season/%d/", id))
 	if err != nil {
 		return
 	}
@@ -24,7 +24,7 @@ func (s *Session) GetSeason(id int) (season Season, err error) {
 }
 
 func (s *Session) GetTimeslotsForSeason(id int) (timeslots []Timeslot, err error) {
-	data, err := s.apiRequest(fmt.Sprintf("/season/%d/alltimeslots/", id), []string{})
+	data, err := s.apiRequest(fmt.Sprintf("/season/%d/alltimeslots/", id))
 	if err != nil {
 		return nil, err
 	}

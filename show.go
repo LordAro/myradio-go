@@ -53,7 +53,7 @@ func (s *Session) GetSearchMeta(term string) ([]ShowMeta, error) {
 
 	q := url.QueryEscape(term)
 
-	data, err := s.apiRequest(fmt.Sprintf("/show/searchmeta/%s", q), []string{})
+	data, err := s.apiRequest(fmt.Sprintf("/show/searchmeta/%s", q))
 
 	if err != nil {
 		return nil, err
@@ -73,7 +73,7 @@ func (s *Session) GetSearchMeta(term string) ([]ShowMeta, error) {
 
 func (s *Session) GetShow(id int) (*ShowMeta, error) {
 
-	data, err := s.apiRequest(fmt.Sprintf("/show/%d", id), []string{})
+	data, err := s.apiRequest(fmt.Sprintf("/show/%d", id))
 
 	if err != nil {
 		return nil, err
@@ -92,7 +92,7 @@ func (s *Session) GetShow(id int) (*ShowMeta, error) {
 }
 
 func (s *Session) GetSeasons(id int) (seasons []Season, err error) {
-	data, err := s.apiRequest(fmt.Sprintf("/show/%d/allseasons", id), []string{})
+	data, err := s.apiRequest(fmt.Sprintf("/show/%d/allseasons", id))
 	if err != nil {
 		return
 	}

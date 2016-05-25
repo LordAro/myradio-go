@@ -51,7 +51,7 @@ type TracklistItem struct {
 }
 
 func (s *Session) GetCurrentAndNext() (*CurrentAndNext, error) {
-	data, err := s.apiRequest("/timeslot/currentandnext", []string{})
+	data, err := s.apiRequest("/timeslot/currentandnext")
 	if err != nil {
 		return nil, err
 	}
@@ -68,7 +68,7 @@ func (s *Session) GetCurrentAndNext() (*CurrentAndNext, error) {
 }
 
 func (s *Session) GetTimeslot(id int) (timeslot Timeslot, err error) {
-	data, err := s.apiRequest(fmt.Sprintf("/timeslot/%d", id), []string{})
+	data, err := s.apiRequest(fmt.Sprintf("/timeslot/%d", id))
 	if err != nil {
 		return
 	}
@@ -94,7 +94,7 @@ func (s *Session) GetTimeslot(id int) (timeslot Timeslot, err error) {
 }
 
 func (s *Session) GetTrackListForTimeslot(id int) (tracklist []TracklistItem, err error) {
-	data, err := s.apiRequest(fmt.Sprintf("/tracklistItem/tracklistfortimeslot/%d", id), []string{})
+	data, err := s.apiRequest(fmt.Sprintf("/tracklistItem/tracklistfortimeslot/%d", id))
 	if err != nil {
 		return
 	}

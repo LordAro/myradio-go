@@ -14,7 +14,7 @@ type Alias struct {
 }
 
 func (s *Session) GetAllAliases() ([]Alias, error) {
-	data, err := s.apiRequest("/alias/allaliases", nil)
+	data, err := s.apiRequest("/alias/allaliases")
 	if err != nil {
 		return nil, err
 	}

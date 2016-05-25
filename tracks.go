@@ -124,7 +124,7 @@ func (t *Track) IntroUsec() uint64 {
 //
 // This consumes one API request.
 func (s *Session) GetTrack(trackid uint64) (*Track, error) {
-	data, err := s.apiRequest(fmt.Sprintf("/track/%d", trackid), nil)
+	data, err := s.apiRequest(fmt.Sprintf("/track/%d", trackid))
 	if err != nil {
 		return nil, err
 	}
@@ -140,7 +140,7 @@ func (s *Session) GetTrack(trackid uint64) (*Track, error) {
 //
 // This consumes one API request.
 func (s *Session) GetTrackTitle(trackid uint64) (string, error) {
-	data, err := s.apiRequest(fmt.Sprintf("/track/%d/title", trackid), nil)
+	data, err := s.apiRequest(fmt.Sprintf("/track/%d/title", trackid))
 	if err != nil {
 		return "", err
 	}
@@ -156,7 +156,7 @@ func (s *Session) GetTrackTitle(trackid uint64) (string, error) {
 //
 // This consumes one API request.
 func (s *Session) GetTrackAlbum(trackid uint64) (*Album, error) {
-	data, err := s.apiRequest(fmt.Sprintf("/track/%d/album", trackid), nil)
+	data, err := s.apiRequest(fmt.Sprintf("/track/%d/album", trackid))
 	if err != nil {
 		return nil, err
 	}

@@ -14,7 +14,7 @@ type Member struct {
 }
 
 func (s *Session) GetMember(id int) (*Member, error) {
-	data, err := s.apiRequest(fmt.Sprintf("/user/%d", id), []string{"personal_data"})
+	data, err := s.apiRequestMixins(fmt.Sprintf("/user/%d", id), []string{"personal_data"})
 	if err != nil {
 		return nil, err
 	}

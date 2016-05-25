@@ -13,7 +13,7 @@ type List struct {
 }
 
 func (s *Session) GetAllLists() ([]List, error) {
-	data, err := s.apiRequest("/list/alllists", nil)
+	data, err := s.apiRequest("/list/alllists")
 	if err != nil {
 		return nil, err
 	}
@@ -26,7 +26,7 @@ func (s *Session) GetAllLists() ([]List, error) {
 }
 
 func (s *Session) GetMembers(l *List) ([]Member, error) {
-	data, err := s.apiRequest(fmt.Sprintf("/list/%d/members", l.Listid), []string{"personal_data"})
+	data, err := s.apiRequestMixins(fmt.Sprintf("/list/%d/members", l.Listid), []string{"personal_data"})
 	if err != nil {
 		return nil, err
 	}

@@ -29,7 +29,11 @@ type apiResponse struct {
 	Payload *json.RawMessage
 }
 
-func (s *Session) apiRequest(endpoint string, mixins []string) (*json.RawMessage, error) {
+func (s *Session) apiRequest(endpoint string) (*json.RawMessage, error) {
+	return s.apiRequestMixins(endpoint, []string{})
+}
+
+func (s *Session) apiRequestMixins(endpoint string, mixins []string) (*json.RawMessage, error) {
 	theurl := s.baseurl
 	params := url.Values{
 		"api_key": []string{s.apikey},

@@ -27,7 +27,7 @@ type Photo struct {
 }
 
 func (s *Session) GetUserBio(id int) (bio string, err error) {
-	data, err := s.apiRequest(fmt.Sprintf("/user/%d/bio/", id), []string{})
+	data, err := s.apiRequest(fmt.Sprintf("/user/%d/bio/", id))
 	if err != nil {
 		return
 	}
@@ -40,7 +40,7 @@ func (s *Session) GetUserBio(id int) (bio string, err error) {
 }
 
 func (s *Session) GetUserName(id int) (name string, err error) {
-	data, err := s.apiRequest(fmt.Sprintf("/user/%d/name/", id), []string{})
+	data, err := s.apiRequest(fmt.Sprintf("/user/%d/name/", id))
 	if err != nil {
 		return
 	}
@@ -49,7 +49,7 @@ func (s *Session) GetUserName(id int) (name string, err error) {
 }
 
 func (s *Session) GetUserProfilePhoto(id int) (profilephoto Photo, err error) {
-	data, err := s.apiRequest(fmt.Sprintf("/user/%d/profilephoto/", id), []string{})
+	data, err := s.apiRequest(fmt.Sprintf("/user/%d/profilephoto/", id))
 	if err != nil {
 		return
 	}
@@ -66,7 +66,7 @@ func (s *Session) GetUserProfilePhoto(id int) (profilephoto Photo, err error) {
 }
 
 func (s *Session) GetUserOfficerships(id int) (officerships []Officership, err error) {
-	data, err := s.apiRequest(fmt.Sprintf("/user/%d/officerships/", id), []string{})
+	data, err := s.apiRequest(fmt.Sprintf("/user/%d/officerships/", id))
 	if err != nil {
 		return
 	}
@@ -92,7 +92,7 @@ func (s *Session) GetUserOfficerships(id int) (officerships []Officership, err e
 }
 
 func (s *Session) GetUserShowCredits(id int) (shows []ShowMeta, err error) {
-	data, err := s.apiRequest(fmt.Sprintf("/user/%d/shows/", id), []string{})
+	data, err := s.apiRequest(fmt.Sprintf("/user/%d/shows/", id))
 	if err != nil {
 		return
 	}
